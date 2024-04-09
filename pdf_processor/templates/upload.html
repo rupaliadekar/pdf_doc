@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>अपलोड PDF</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: skyblue;
+        }
+
+        .containers {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        #container1 {
+            background-color: black;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        #container2 {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px; 
+        }
+
+        h2 {
+            color: white;
+            margin-top: 0;
+        }
+
+        h3 {
+            color: green;
+            margin-top: 0;
+        }
+
+        form {
+            margin-top: 20px;
+            margin-bottom: 20px; 
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        input[type="file"] {
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        button[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="containers">
+        <div id="container1">
+            <h2>PDF अपलोड करा</h2>
+        </div>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="file" name="pdf_file" accept=".pdf">
+            <button type="submit">अपलोड</button>
+        </form>
+        <div id="container2">
+            <h3>PDF अपलोड करा आनी अपलोड बटण व्हीआर डब्बा</h3>
+        </div>
+    </div>
+</body>
+
+</html>
